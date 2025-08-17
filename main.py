@@ -11,9 +11,9 @@ app = FastAPI(
 
 add_cors_middleware(app)
 
-app.include_router(auth_router, tags=["auth"])
-app.include_router(user_router, tags=["users"])
-app.include_router(room_router, tags=["rooms"])
+app.include_router(auth_router, prefix="/api", tags=["auth"])
+app.include_router(user_router, prefix="/api", tags=["users"])
+app.include_router(room_router, prefix="/api", tags=["rooms"])
 
 @app.get("/")
 def root_route():

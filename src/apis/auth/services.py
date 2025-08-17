@@ -78,7 +78,7 @@ class AuthService:
             "sub": str(new_user.id),
             "email": new_user.email,
             "name": new_user.name,
-            "role": str(new_user.role)
+            "role": new_user.role.value
         }
 
         access_token = self.create_access_token(jwt_payload)
@@ -106,7 +106,7 @@ class AuthService:
             "sub": str(user_data.id),
             "email": user_data.email,
             "name": user_data.name,
-            "role": str(user_data.role)
+            "role": user_data.role.value
         }
 
         access_token = self.create_access_token(jwt_payload)

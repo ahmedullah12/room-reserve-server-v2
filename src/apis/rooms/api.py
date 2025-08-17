@@ -21,13 +21,14 @@ def create_room(room: schemas.Room, db: Session = Depends(get_db)):
 
 @router.get("")
 def get_all_room(db: Session = Depends(get_db)):
-    rooms = room_services.get_all_rooms(db=db, skip=0, limit=50)
+    data = room_services.get_all_rooms(db=db, skip=0, limit=50)
     
     return {
         "statusCode": 200,
         "success": True,
         "message": "Rooms fetched successfully!!",
-        "data": rooms
+        "data": data["data"],
+        "meta": data["meta"]
     }
     
 @router.get("/:id")
