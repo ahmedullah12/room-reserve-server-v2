@@ -4,6 +4,10 @@ from src.apis.users.api import router as user_router
 from src.apis.rooms.api import router as room_router
 from src.middleware.cors import add_cors_middleware
 
+# alembic commands
+# alembic revision --autogenerate -m "Initial migration"
+# alembic upgrade head
+
 app = FastAPI(
     title="Room Reservation",
     description="Service for booking meeting rooms",
