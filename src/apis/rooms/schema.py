@@ -7,7 +7,7 @@ class Room(BaseModel):
     roomNumber: int
     floorNo: int
     capacity: int
-    pricePerSlot: int
+    price_per_slot: int
     description: str
     images: list[str]
     amenities: list[str]
@@ -17,7 +17,7 @@ class RoomUpdate(BaseModel):
     roomNumber:   Optional[int]   = None
     floorNo:      Optional[int]   = None
     capacity:     Optional[int]   = None
-    pricePerSlot: Optional[int]   = None
+    price_per_slot: Optional[int]   = None
     description: Optional[int] = None
     images:       Optional[list[str]] = None
     amenities:    Optional[list[str]] = None

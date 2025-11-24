@@ -15,7 +15,7 @@ class Room(Base):
     roomNumber= Column(Integer)
     floorNo = Column(Integer)
     capacity = Column(Integer)
-    pricePerSlot = Column(Integer)
+    price_per_slot = Column(Integer)
     description = Column(String)
     images = Column(MutableList.as_mutable(ARRAY(String)), default=list)
     amenities = Column(MutableList.as_mutable(ARRAY(String)), default=list)

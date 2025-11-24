@@ -54,7 +54,7 @@ class RoomServices:
                     "id": str(room.id),
                     "name": getattr(room, 'name', 'N/A'),
                     "capacity": getattr(room, 'capacity', 'N/A'),
-                    "pricePerSlot": getattr(room, 'pricePerSlot', 'N/A'),
+                    "pricePerSlot": getattr(room, 'price_per_slot', 'N/A'),
                     "amenities": getattr(room, 'amenities', []),
                     "description": getattr(room, 'description', 'N/A'),
                     "availability": getattr(room, 'is_available', True)
@@ -188,7 +188,7 @@ Remember: You're helping real people find rooms they'll love. Be conversational,
 
         elif any(word in message_lower for word in ['price', 'cost', 'rate', 'budget']):
             if rooms:
-                prices = [getattr(room, 'pricePerSlot', 'N/A')
+                prices = [getattr(room, 'price_per_slot', 'N/A')
                           for room in rooms]
                 unique_prices = sorted(
                     list(set([p for p in prices if p != 'N/A' and isinstance(p, (int, float))])))
