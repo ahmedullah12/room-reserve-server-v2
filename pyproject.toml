@@ -1,0 +1,35 @@
+[tool.ruff]
+# Select which rules to enforce
+select = [
+    "E",    # pycodestyle errors (indentation, whitespace)
+    "W",    # pycodestyle warnings
+    "F",    # Pyflakes (unused imports, undefined names)
+    "N",    # pep8-naming (THIS CHECKS NAMING CONVENTIONS!)
+]
+
+# Rules to ignore (you can remove these later after fixing)
+ignore = [
+    "E402",  # Module level import not at top of file
+]
+
+# Line length
+line-length = 88
+
+# Exclude certain directories from checking
+exclude = [
+    ".git",
+    "__pycache__",
+    "venv",
+    ".venv",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint.pep8-naming]
+# These are standard names that can break naming rules
+ignore-names = [
+    "setUp",
+    "tearDown",
+    "setUpClass",
+    "tearDownClass",
+]
