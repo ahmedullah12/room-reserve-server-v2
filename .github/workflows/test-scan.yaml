@@ -18,7 +18,7 @@ jobs:
         with:
           # Optional: specify what to check
           args: 'check --output-format=github'
-          src: './backend'  # Only check backend folder
+          src: './'  # Check the whole folder
 
   lint:
     runs-on: ubuntu-latest
